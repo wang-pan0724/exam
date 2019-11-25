@@ -39,15 +39,17 @@ export default {
   },
   created () {
     // console.log(typeof (this.options));
-    if (typeof (this.options) == 'string') {
-      this.options = eval("(" + this.options + ")");
+    if (typeof (this.options) === 'string') {
+      this.options = this.options
     }
-    var that = this;
+    var that = this
     if (that.options.length > 0) {
       that.options.forEach((item) => {
-        item.checked == true ? that.selectedValue.push(item.value) : '';
+        if (item.checked === true) {
+          that.selectedValue.push(item.value)
+        }
       })
-      that.$emit('getData', that.selectedValue);
+      that.$emit('getData', that.selectedValue)
     }
   },
   methods: {
@@ -56,7 +58,7 @@ export default {
   },
   watch: {
     selectedValue () {
-      this.$emit('getData', this.selectedValue);
+      this.$emit('getData', this.selectedValue)
     }
   }
 }

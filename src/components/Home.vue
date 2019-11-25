@@ -1,32 +1,30 @@
 <template>
   <div>
-    <div class="title">KevinYang题库</div>
+    <div class="title">题库</div>
     <div class="hello" @click="test()">开始测试 ></div>
   </div>
 </template>
 
 <script>
-import { debug } from "util";
 export default {
-  name: "Home",
+  name: 'Home',
   data() {
     return {
-      msg: ""
-    };
+      msg: ''
+    }
   },
   created() {
-    debugger;
-    var token = localStorage.getItem("token");
+    var token = localStorage.getItem('token')
     if (token == null) {
-      this.$router.push({ path: "/Login" });
+      this.$router.push({path: '/Login'})
     }
   },
   methods: {
     test() {
-      this.$router.push({ path: "/Question" });
+      this.$router.push({path: '/Question'})
     }
   }
-};
+}
 </script>
 <style>
 .title {

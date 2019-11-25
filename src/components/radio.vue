@@ -37,10 +37,10 @@ export default {
     title: String,
     options: [String, Array]
   },
-  created () {
+  created() {
     // console.log(typeof (this.options));
-    if (typeof (this.options) == 'string') {
-      this.options = eval("(" + this.options + ")");
+    if (typeof (this.options) === 'string') {
+      this.options = this.options
     }
   },
   methods: {

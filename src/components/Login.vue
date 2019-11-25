@@ -15,25 +15,25 @@
 
 <script>
 export default {
-  name: "Login",
-  data() {
+  name: 'Login',
+  data () {
     return {
-      name: "",
-      password: ""
-    };
+      name: '',
+      password: ''
+    }
   },
-  created() {},
+  created () {},
   methods: {
-    login() {
-      console.log(this.name);
-      console.log(this.password);
+    login () {
+      console.log(this.name)
+      console.log(this.password)
       if (this.name.length > 0 && this.password.length > 0) {
-        localStorage.setItem("token", new Date());
-        this.$router.push({ path: "/Home" });
+        localStorage.setItem('token', new Date())
+        this.$router.push({ path: '/Home' })
       }
     }
   }
-};
+}
 </script>
 <style>
 .title {
